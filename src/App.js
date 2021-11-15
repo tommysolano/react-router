@@ -1,4 +1,24 @@
-import { Switch, Route, Link, Routes } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
+
+const Portafolio = () => {
+    return (
+        <div>
+            <h1>Portafolio</h1>
+            <ul>
+                <li>
+                    <Link to={"/portafolio/proyecto-1"}>Proyecto 1</Link>
+                </li>
+            </ul>
+            <div>
+                <Switch>
+                    <Route path={"/portafolio/proyecto-1"}>
+                        <h2>Proyecto 1</h2>
+                    </Route>
+                </Switch>
+            </div>
+        </div>
+    )
+}
 
 function App() {
   return (
@@ -19,7 +39,7 @@ function App() {
             <h1>Inicio</h1>
           </Route>
           <Route exact path="/portafolio">
-            <h1>Portafolio</h1>
+            <Portafolio/>
           </Route>
         </Switch>
       </section>
